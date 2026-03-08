@@ -1,0 +1,48 @@
+{
+  "name": "@appdispatch/health-reporter",
+  "version": "0.1.0",
+  "description": "Health metrics reporter for AppDispatch OTA updates (React Native)",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "health-metrics",
+    "telemetry",
+    "dispatch",
+    "expo",
+    "react-native",
+    "error-reporting"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AppDispatch/health-reporter"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "react-native": ">=0.70.0"
+  },
+  "peerDependenciesMeta": {
+    "react-native": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}
