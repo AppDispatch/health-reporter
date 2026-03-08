@@ -73,7 +73,8 @@ export class HealthReporter {
     // Track app launches
     if (this.options.trackAppLaunches !== false) {
       this.teardownLaunch = installAppLaunchTracker(() => {
-        this.buffer.add("app_launch", undefined, undefined);
+        const flagStates = snapshotFlagStates(this.flagStateProvider);
+        this.buffer.add("app_launch", undefined, undefined, 1, flagStates);
       });
     }
 

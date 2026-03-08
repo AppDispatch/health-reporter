@@ -165,7 +165,8 @@ var HealthReporter = class {
     }
     if (this.options.trackAppLaunches !== false) {
       this.teardownLaunch = installAppLaunchTracker(() => {
-        this.buffer.add("app_launch", void 0, void 0);
+        const flagStates = snapshotFlagStates(this.flagStateProvider);
+        this.buffer.add("app_launch", void 0, void 0, 1, flagStates);
       });
     }
     const interval = this.options.flushIntervalMs ?? 3e4;
